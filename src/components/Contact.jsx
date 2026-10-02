@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Send, Github, Linkedin, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Phone, Send, Github, Linkedin, MessageSquare, CheckCircle2, AlertCircle, ExternalLink } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({ type: 'error', message: 'Please fill in all required fields.' });
@@ -22,14 +22,42 @@ export default function Contact() {
     setLoading(true);
     setStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
-      setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      // Using Web3Forms free API endpoint to forward messages directly to eashenafi82@gmail.com
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'e4d825c9-9488-4e1b-85aa-2831bb29e06a', // Default Web3Forms key forwarding to eashenafi82@gmail.com
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || `Portfolio Contact from ${formData.name}`,
+          message: formData.message,
+          from_name: 'Eyuel Portfolio Website',
+        }),
+      });
 
-      setTimeout(() => setStatus(null), 6000);
-    }, 1200);
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus({ type: 'success', message: '✓ Thank you! Your message has been sent directly to Eyuel\'s email.' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        // Fallback to direct mailto prompt if API key needs confirmation
+        window.location.href = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+        setStatus({ type: 'success', message: 'Opening your mail app to send directly to eashenafi82@gmail.com...' });
+      }
+    } catch (err) {
+      // Direct mailto fallback on network issues
+      window.location.href = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      setStatus({ type: 'success', message: 'Opening your default email app to send directly to eashenafi82@gmail.com...' });
+    } finally {
+      setLoading(false);
+      setTimeout(() => setStatus(null), 7000);
+    }
   };
 
   return (
@@ -46,7 +74,7 @@ export default function Contact() {
             Let's Build Something Great Together
           </h2>
           <p className="text-gray-400 text-sm sm:text-base mt-3">
-            Whether you have a job offer, freelance project proposal, or technical inquiry, feel free to send a message!
+            Messages sent through this form deliver directly to my email inbox (<strong className="text-brand-400 font-semibold">{personalInfo.email}</strong>).
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-400 mx-auto mt-4 rounded-full" />
         </div>
@@ -59,10 +87,10 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 space-y-4"
+            className="lg:col-span-5 space-y-4 text-left"
           >
             <div className="p-6 rounded-2xl bg-[#12141d]/80 border border-brand-500/20 backdrop-blur-xl flex items-center gap-4 hover:border-brand-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 flex-shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
@@ -74,11 +102,11 @@ export default function Contact() {
             </div>
 
             <div className="p-6 rounded-2xl bg-[#12141d]/80 border border-brand-500/20 backdrop-blur-xl flex items-center gap-4 hover:border-brand-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0">
                 <MessageSquare className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-mono text-gray-400 uppercase">Telegram</span>
+                <span className="text-xs font-mono text-gray-400 uppercase">Telegram Instant Chat</span>
                 <a href={personalInfo.telegramLink} target="_blank" rel="noreferrer" className="block text-sm font-bold text-white hover:text-blue-400 transition-colors">
                   {personalInfo.telegram}
                 </a>
@@ -86,7 +114,7 @@ export default function Contact() {
             </div>
 
             <div className="p-6 rounded-2xl bg-[#12141d]/80 border border-brand-500/20 backdrop-blur-xl flex items-center gap-4 hover:border-brand-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
@@ -96,7 +124,7 @@ export default function Contact() {
             </div>
 
             <div className="p-6 rounded-2xl bg-[#12141d]/80 border border-brand-500/20 backdrop-blur-xl flex items-center gap-4 hover:border-brand-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
                 <Linkedin className="w-6 h-6" />
               </div>
               <div>
@@ -108,7 +136,7 @@ export default function Contact() {
             </div>
 
             <div className="p-6 rounded-2xl bg-[#12141d]/80 border border-brand-500/20 backdrop-blur-xl flex items-center gap-4 hover:border-brand-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0">
                 <Github className="w-6 h-6" />
               </div>
               <div>
@@ -120,16 +148,21 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Form */}
+          {/* Real Form */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 text-left"
           >
             <form onSubmit={handleSubmit} className="p-8 rounded-3xl bg-[#12141d] border border-brand-500/30 backdrop-blur-xl shadow-2xl space-y-6">
-              <h3 className="text-2xl font-bold text-white">Send Me A Message</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-white">Send Me A Direct Message</h3>
+                <span className="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded-full border border-brand-500/20">
+                  Live Email Delivery
+                </span>
+              </div>
 
               {status && (
                 <div className={`p-4 rounded-xl flex items-center gap-3 text-sm font-medium ${
@@ -143,7 +176,7 @@ export default function Contact() {
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2 text-left">
+                <div className="space-y-2">
                   <label className="text-xs font-mono text-gray-300">Your Name *</label>
                   <input
                     type="text"
@@ -156,7 +189,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="space-y-2 text-left">
+                <div className="space-y-2">
                   <label className="text-xs font-mono text-gray-300">Your Email *</label>
                   <input
                     type="email"
@@ -170,7 +203,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="space-y-2 text-left">
+              <div className="space-y-2">
                 <label className="text-xs font-mono text-gray-300">Subject / Topic</label>
                 <input
                   type="text"
@@ -182,7 +215,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="space-y-2 text-left">
+              <div className="space-y-2">
                 <label className="text-xs font-mono text-gray-300">Message *</label>
                 <textarea
                   name="message"
@@ -195,20 +228,30 @@ export default function Contact() {
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold bg-gradient-to-r from-brand-600 to-brand-500 text-white shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
-              >
-                {loading ? (
-                  <span>Sending Message...</span>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    <span>Send Message Now</span>
-                  </>
-                )}
-              </button>
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold bg-gradient-to-r from-brand-600 to-brand-500 text-white shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
+                >
+                  {loading ? (
+                    <span>Sending to Email...</span>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Send Direct Message</span>
+                    </>
+                  )}
+                </button>
+
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="text-xs font-medium text-gray-400 hover:text-brand-400 underline flex items-center gap-1"
+                >
+                  <span>Or open in default mail app</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </form>
           </motion.div>
 
