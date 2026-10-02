@@ -11,7 +11,7 @@ export const personalInfo = {
   instagram: "@eyuel_ash",
   github: "https://github.com/eyuashu06",
   linkedin: "https://linkedin.com/in/eyuel-ashenafi-16a474382",
-  resumePdf: "Eyuel_Ashenafi_Resume.pdf",
+  resumePdf: "/Eyuel_Ashenafi_Resume.pdf",
   bio: "Full-Stack Developer and Software Engineering student at Adama Science and Technology University (ASTU). I design, build, and deploy high-performance web and mobile applications—ranging from React & Vue.js frontends to Node.js, Express, and Laravel backends with robust SQL/NoSQL databases, secure JWT/Sanctum authentication, and Google Gemini AI integrations.",
   status: "Available for Full-time Roles & Freelance Work"
 };
