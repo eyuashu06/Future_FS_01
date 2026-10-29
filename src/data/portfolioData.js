@@ -56,7 +56,7 @@ export const projects = [
     category: "Full-Stack",
     date: "2026",
     status: "Live Production",
-    liveUrl: "https://coffee-house-eta-seven.vercel.app",
+    liveUrl: "https://coffee-house-xtnh.vercel.app/?welcome=1",
     githubUrl: "https://github.com/eyuashu06/Coffee_House",
     description: "Production-ready full-stack artisanal coffee & food ordering platform featuring Next.js 14 App Router, Django 5 REST backend, MySQL 8.0, Chapa payment gateway integration with webhooks and idempotency, and full Docker Compose orchestration.",
     highlights: [
