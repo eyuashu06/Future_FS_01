@@ -12,14 +12,14 @@ export const personalInfo = {
   github: "https://github.com/eyuashu06",
   linkedin: "https://linkedin.com/in/eyuel-ashenafi-16a474382",
   resumePdf: "/Eyuel_Ashenafi_Resume.pdf",
-  bio: "Full-Stack Developer and Software Engineering student at Adama Science and Technology University (ASTU). I design, build, and deploy high-performance web and mobile applications—ranging from React & Vue.js frontends to Node.js, Express, and Laravel backends with robust SQL/NoSQL databases, secure JWT/Sanctum authentication, and Google Gemini AI integrations.",
+  bio: "Full-Stack Developer and Software Engineering student at Adama Science and Technology University (ASTU). I design, build, and deploy high-performance web and mobile applications—ranging from Next.js, React & Vue.js frontends to Python/Django, Node.js, Express, and Laravel backends with robust SQL/NoSQL databases and secure authentication.",
   status: "Available for Full-time Roles & Freelance Work"
 };
 
 export const stats = [
-  { label: "Completed Projects", value: 8, suffix: "+" },
-  { label: "Live Vercel Apps", value: 2, suffix: "" },
-  { label: "Tech Stack Tools", value: 15, suffix: "+" },
+  { label: "Completed Projects", value: 9, suffix: "+" },
+  { label: "Live Vercel Apps", value: 3, suffix: "+" },
+  { label: "Tech Stack Tools", value: 18, suffix: "+" },
   { label: "Engineering Years", value: 3, suffix: "+" }
 ];
 
@@ -49,6 +49,26 @@ export const education = [
 ];
 
 export const projects = [
+  {
+    id: "coffee-house",
+    title: "Artisanal Reserve | CoffeeHouse",
+    subtitle: "Full-Stack Food & Coffee Ordering Platform",
+    category: "Full-Stack",
+    date: "2026",
+    status: "Live Production",
+    liveUrl: "https://coffee-house-eta-seven.vercel.app",
+    githubUrl: "https://github.com/eyuashu06/Coffee_House",
+    description: "Production-ready full-stack artisanal coffee & food ordering platform featuring Next.js 14 App Router, Django 5 REST backend, MySQL 8.0, Chapa payment gateway integration with webhooks and idempotency, and full Docker Compose orchestration.",
+    highlights: [
+      "Developed high-performance Next.js 14 App Router client with TypeScript, Tailwind CSS, Playfair Display typography, and responsive cart workflows.",
+      "Architected Python & Django 5 REST Framework backend with SimpleJWT authentication, automated order expiration, and drf-spectacular Swagger API docs.",
+      "Integrated Chapa payment gateway (ETB currency) with secure webhook signature verification, reconciliation jobs, and idempotent checkout.",
+      "Containerized multi-service production infrastructure using Docker Compose across MySQL 8.0, Django backend, and Next.js frontend."
+    ],
+    tech: ["Next.js 14", "TypeScript", "Tailwind CSS", "Python", "Django 5", "Django REST Framework", "MySQL", "Chapa Gateway", "Docker Compose", "Vercel"],
+    featured: true,
+    image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
+  },
   {
     id: "recall-ai",
     title: "RecallAI (FlashGEN AI)",
@@ -204,49 +224,49 @@ export const skillCategories = [
   {
     category: "Languages",
     skills: [
-      { name: "JavaScript (ES6+)", level: 92, icon: "Code2" },
-      { name: "TypeScript", level: 88, icon: "FileCode" },
-      { name: "Python", level: 82, icon: "Terminal" },
-      { name: "PHP", level: 80, icon: "Server" },
-      { name: "Java", level: 75, icon: "Coffee" }
+      { name: "JavaScript (ES6+)", tag: "Modern ESNext, Async/Await", icon: "Code2" },
+      { name: "TypeScript", tag: "Strict Types & Interfaces", icon: "Code2" },
+      { name: "Python", tag: "Scripting & Backend", icon: "Terminal" },
+      { name: "PHP", tag: "Object-Oriented & MVC", icon: "Cpu" },
+      { name: "Java", tag: "OOP & Data Structures", icon: "Coffee" }
     ]
   },
   {
     category: "Frontend Development",
     skills: [
-      { name: "React.js / React 19", level: 92, icon: "Atom" },
-      { name: "Vue.js", level: 85, icon: "Layout" },
-      { name: "Tailwind CSS", level: 95, icon: "Palette" },
-      { name: "React Native (Expo)", level: 78, icon: "Smartphone" },
-      { name: "Vite & HTML5/CSS3", level: 90, icon: "Zap" }
+      { name: "React.js / React 19", tag: "Hooks, Context & State", icon: "Zap" },
+      { name: "Vue.js", tag: "Composition API & Pinia", icon: "Layout" },
+      { name: "Tailwind CSS", tag: "Responsive & Modern UI", icon: "Layers" },
+      { name: "React Native (Expo)", tag: "Cross-Platform Mobile", icon: "Smartphone" },
+      { name: "Vite & HTML5/CSS3", tag: "Build Tooling & Semantic Web", icon: "Globe" }
     ]
   },
   {
     category: "Backend & APIs",
     skills: [
-      { name: "Node.js & Express", level: 90, icon: "Cpu" },
-      { name: "Laravel", level: 84, icon: "Layers" },
-      { name: "RESTful API Design", level: 92, icon: "Globe" },
-      { name: "Prisma ORM", level: 82, icon: "Database" }
+      { name: "Node.js & Express", tag: "REST Architecture & Middleware", icon: "Cpu" },
+      { name: "Laravel", tag: "Full-Stack MVC & Eloquent", icon: "Layers" },
+      { name: "RESTful API Design", tag: "Scalable Endpoints & Standards", icon: "Globe" },
+      { name: "Prisma ORM", tag: "Type-Safe DB Modeling", icon: "Database" }
     ]
   },
   {
     category: "Databases & Security",
     skills: [
-      { name: "MongoDB Atlas", level: 88, icon: "Database" },
-      { name: "MySQL", level: 85, icon: "Table" },
-      { name: "PostgreSQL (Supabase)", level: 82, icon: "ShieldCheck" },
-      { name: "Firebase Firestore", level: 84, icon: "Flame" },
-      { name: "JWT & Sanctum Auth", level: 90, icon: "Lock" }
+      { name: "MongoDB Atlas", tag: "NoSQL & Document Modeling", icon: "Database" },
+      { name: "MySQL", tag: "Relational Schemas & Queries", icon: "Table" },
+      { name: "PostgreSQL (Supabase)", tag: "Relational DB & RLS Policies", icon: "Database" },
+      { name: "Firebase Firestore", tag: "Real-time DB & Cloud Rules", icon: "Flame" },
+      { name: "JWT & Sanctum Auth", tag: "Token Security & RBAC", icon: "ShieldCheck" }
     ]
   },
   {
     category: "AI & Tools",
     skills: [
-      { name: "Google Gemini API", level: 88, icon: "Sparkles" },
-      { name: "Git & GitHub", level: 90, icon: "GitBranch" },
-      { name: "Postman & Thunder Client", level: 88, icon: "CheckCircle2" },
-      { name: "Vercel Deployment", level: 92, icon: "UploadCloud" }
+      { name: "Google Gemini API", tag: "Generative AI & LLM Workflows", icon: "Sparkles" },
+      { name: "Git & GitHub", tag: "Version Control & Collaboration", icon: "Code2" },
+      { name: "Postman & Thunder Client", tag: "API Testing & Automation", icon: "Zap" },
+      { name: "Vercel Deployment", tag: "CI/CD & Serverless Hosting", icon: "Globe" }
     ]
   }
 ];
@@ -263,8 +283,8 @@ export const clientServices = [
     icon: "Server"
   },
   {
-    title: "AI Integration (Google Gemini API)",
-    description: "Adding smart AI features such as AI chat helpdesks, automated content generators, and smart flashcard engines into existing web systems.",
+    title: "Modern Cloud & Multi-Tier Architecture",
+    description: "Architecting end-to-end full-stack systems with Next.js, Django, Node.js, and automated deployment pipelines.",
     icon: "Sparkles"
   },
   {

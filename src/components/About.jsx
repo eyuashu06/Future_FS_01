@@ -41,7 +41,7 @@ export default function About() {
               </p>
 
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                My engineering focus spans full-stack architecture—combining dynamic React 19 / Vue.js frontends with robust Node.js / Laravel backends, normalized SQL/NoSQL databases, security standards (JWT, Sanctum, RLS), and intelligent AI capabilities via the Google Gemini API.
+                My engineering focus spans full-stack architecture—combining dynamic React 19 / Next.js / Vue.js frontends with robust Python/Django, Node.js, and Laravel backends, normalized SQL/NoSQL databases, and security standards (JWT, Sanctum, RLS).
               </p>
 
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
@@ -51,7 +51,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-4 h-4 text-brand-500 flex-shrink-0" />
-                  <span>Google Gemini AI Integration</span>
+                  <span>Next.js & Django Architecture</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-4 h-4 text-brand-500 flex-shrink-0" />

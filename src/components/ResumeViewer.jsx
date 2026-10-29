@@ -94,7 +94,7 @@ export default function ResumeViewer() {
                 <span>Core Skillsets</span>
               </div>
               <p className="text-xs text-gray-300 leading-relaxed">
-                JavaScript, TypeScript, Python, PHP, Java, React, Vue, Node.js, Express, Laravel, MySQL, MongoDB, Supabase, Firebase, Gemini AI, Git.
+                JavaScript, TypeScript, Python, Next.js, React, Vue, Node.js, Express, Django, Laravel, MySQL, PostgreSQL, MongoDB, Supabase, Firebase, Docker, Git.
               </p>
             </div>
 

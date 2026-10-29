@@ -28,7 +28,7 @@ export default function Projects() {
             Projects & Live Deployments
           </h2>
           <p className="text-gray-400 text-sm sm:text-base mt-3">
-            Showcasing real-world full-stack web applications, live Vercel deployments, mobile applications, and AI integrations.
+            Showcasing real-world full-stack web applications, live Vercel deployments, mobile applications, and backend systems.
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-400 mx-auto mt-4 rounded-full" />
         </div>

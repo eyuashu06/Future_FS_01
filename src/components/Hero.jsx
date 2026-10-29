@@ -6,9 +6,9 @@ import { personalInfo } from '../data/portfolioData';
 export default function Hero() {
   const roles = [
     "Full-Stack Developer",
-    "React & Node.js Engineer",
+    "React & Next.js Engineer",
+    "Django & Node.js Developer",
     "Laravel & Vue.js Specialist",
-    "Google Gemini AI Integrator",
     "Software Engineering Student @ ASTU"
   ];
 
@@ -76,7 +76,7 @@ export default function Hero() {
 
             {/* Paragraph */}
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Software Engineering Student at <strong className="text-white">ASTU</strong> & Intern at <strong className="text-white">Omishtu Software Company</strong>. I build scalable, high-performance web applications with React, Vue, Node.js, Express, Laravel, SQL/NoSQL databases, and Gemini AI.
+              Software Engineering Student at <strong className="text-white">ASTU</strong> & Intern at <strong className="text-white">Omishtu Software Company</strong>. I build scalable, high-performance web applications with Next.js, React, Vue, Django, Node.js, Express, Laravel, and SQL/NoSQL databases.
             </p>
 
             {/* Action Buttons */}
@@ -154,8 +154,8 @@ export default function Hero() {
                     <p className="pl-4 text-gray-300">name: <span className="text-green-400">"{personalInfo.name}"</span>,</p>
                     <p className="pl-4 text-gray-300">university: <span className="text-green-400">"ASTU Software Eng"</span>,</p>
                     <p className="pl-4 text-gray-300">internship: <span className="text-green-400">"Omishtu Software"</span>,</p>
-                    <p className="pl-4 text-gray-300">stack: [<span className="text-orange-400">"React"</span>, <span className="text-orange-400">"Vue"</span>, <span className="text-orange-400">"Node"</span>, <span className="text-orange-400">"Laravel"</span>],</p>
-                    <p className="pl-4 text-gray-300">aiIntegration: <span className="text-blue-400">"Google Gemini API"</span>,</p>
+                    <p className="pl-4 text-gray-300">stack: [<span className="text-orange-400">"Next.js"</span>, <span className="text-orange-400">"React"</span>, <span className="text-orange-400">"Django"</span>, <span className="text-orange-400">"Node"</span>],</p>
+                    <p className="pl-4 text-gray-300">architecture: <span className="text-blue-400">"Clean & Scalable"</span>,</p>
                     <p className="pl-4 text-gray-300">availableForHire: <span className="text-brand-400">true</span></p>
                     <p className="text-purple-400">&#125;;</p>
                   </div>
@@ -169,11 +169,11 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>2 Live Vercel Apps</span>
+                    <span>3+ Live Vercel Apps</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-300">
                     <Sparkles className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                    <span>Gemini AI Dev</span>
+                    <span>Next.js & Django</span>
                   </div>
                   <div className="flex items-center gap-2 p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
                     <Terminal className="w-4 h-4 text-purple-400 flex-shrink-0" />

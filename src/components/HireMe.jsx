@@ -28,7 +28,7 @@ export default function HireMe() {
             Why Work With Eyuel Ashenafi?
           </h2>
           <p className="text-gray-400 text-sm sm:text-base mt-3">
-            Whether you need a full web application built from scratch, an AI API integrated into your workflow, or a developer for your engineering team.
+            Whether you need a full web application built from scratch, a robust API architected for your workflow, or a dedicated developer for your engineering team.
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-400 mx-auto mt-4 rounded-full" />
         </div>
