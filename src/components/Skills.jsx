@@ -251,11 +251,11 @@ export default function Skills() {
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Slideshow Row 1: Leftward Infinite Glide */}
+        {/* Slideshow Row 1 */}
         <div className="flex overflow-hidden">
           <motion.div
             className="flex gap-5 sm:gap-7 w-max py-2"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["-50%", "0%"] }}
             transition={{
               ease: "linear",
               duration: 28,

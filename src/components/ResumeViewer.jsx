@@ -72,7 +72,13 @@ export default function ResumeViewer() {
                 <Award className="w-4 h-4" />
                 <span>Deployed Live Applications</span>
               </div>
-              <ul className="space-y-1 text-xs text-gray-300">
+              <ul className="space-y-1.5 text-xs text-gray-300">
+                <li className="flex items-center justify-between">
+                  <span>CoffeeHouse (Food & Coffee Ordering)</span>
+                  <a href="https://coffee-house-xtnh.vercel.app/?welcome=1" target="_blank" rel="noreferrer" className="text-brand-400 underline hover:text-brand-300 flex items-center gap-1">
+                    Live Vercel <ExternalLink className="w-3 h-3" />
+                  </a>
+                </li>
                 <li className="flex items-center justify-between">
                   <span>RecallAI (AI Flashcards)</span>
                   <a href="https://flash-gen-ai-six.vercel.app" target="_blank" rel="noreferrer" className="text-brand-400 underline hover:text-brand-300 flex items-center gap-1">
