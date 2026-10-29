@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 
-// Crisp, standardized SVG tech brand icons
-const technologiesRow1 = [
+// Combined crisp, standardized SVG tech brand icons for single slide
+const technologies = [
   {
     name: "React 19",
     color: "#61DAFB",
@@ -119,10 +119,7 @@ const technologiesRow1 = [
         <path d="M16.4 42.6V91.7L39.3 104.9V55.8L16.4 42.6Z" fill="#FF2D20" fillOpacity="0.85"/>
       </svg>
     )
-  }
-];
-
-const technologiesRow2 = [
+  },
   {
     name: "MySQL",
     color: "#4479A1",
@@ -244,56 +241,27 @@ export default function Skills() {
 
       </div>
 
-      {/* Full-width Infinite Horizontal Slideshow Marquee */}
-      <div className="relative w-full overflow-hidden space-y-6">
+      {/* Full-width Infinite Horizontal Slideshow Marquee (Single Moving Track) */}
+      <div className="relative w-full overflow-hidden py-4">
         
         {/* Edge Fade Gradients for Seamless Depth */}
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Slideshow Row 1 */}
+        {/* Single Slideshow Row Moving Smoothly */}
         <div className="flex overflow-hidden">
           <motion.div
             className="flex gap-5 sm:gap-7 w-max py-2"
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               ease: "linear",
-              duration: 28,
+              duration: 36,
               repeat: Infinity,
             }}
           >
-            {[...technologiesRow1, ...technologiesRow1].map((tech, idx) => (
+            {[...technologies, ...technologies].map((tech, idx) => (
               <div
-                key={`r1-${tech.name}-${idx}`}
-                className="group relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#12141d]/90 border border-brand-500/20 hover:border-brand-500/60 hover:bg-brand-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-500/20 cursor-pointer"
-              >
-                <div className="transition-transform duration-300 group-hover:scale-110">
-                  {tech.svg}
-                </div>
-
-                {/* Subtle Hover Tooltip */}
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-[#090a0f] border border-brand-500/30 text-[11px] font-semibold text-white whitespace-nowrap shadow-xl z-30">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Slideshow Row 2: Rightward Infinite Glide */}
-        <div className="flex overflow-hidden">
-          <motion.div
-            className="flex gap-5 sm:gap-7 w-max py-2"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{
-              ease: "linear",
-              duration: 32,
-              repeat: Infinity,
-            }}
-          >
-            {[...technologiesRow2, ...technologiesRow2].map((tech, idx) => (
-              <div
-                key={`r2-${tech.name}-${idx}`}
+                key={`${tech.name}-${idx}`}
                 className="group relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#12141d]/90 border border-brand-500/20 hover:border-brand-500/60 hover:bg-brand-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-500/20 cursor-pointer"
               >
                 <div className="transition-transform duration-300 group-hover:scale-110">
