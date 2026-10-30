@@ -1,8 +1,16 @@
-import React from 'react';
-import { ArrowUp, Github, Linkedin, Mail, Heart, Code2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowUp, Github, Linkedin, Mail, Heart, Code2, Copy, Check } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -23,17 +31,35 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4 text-gray-400">
-            <a href={personalInfo.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+          {/* Social Links & Quick Copy Email */}
+          <div className="flex flex-wrap items-center gap-3 text-gray-400">
+            <a href={personalInfo.github} target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
               <Github className="w-4 h-4" />
             </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+            <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
               <Linkedin className="w-4 h-4" />
             </a>
-            <a href={`mailto:${personalInfo.email}`} className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+            <a href={`mailto:${personalInfo.email}`} aria-label="Send Email" className="p-2.5 rounded-full bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
               <Mail className="w-4 h-4" />
             </a>
+
+            <button
+              onClick={copyEmail}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-brand-500/20 border border-white/10 hover:border-brand-500/40 text-xs font-mono text-gray-300 hover:text-white transition-all"
+              title="Copy email to clipboard"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="text-emerald-400 font-semibold">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3.5 h-3.5 text-brand-400" />
+                  <span>Copy Email</span>
+                </>
+              )}
+            </button>
           </div>
 
           {/* Scroll to Top */}

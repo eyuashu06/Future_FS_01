@@ -77,7 +77,7 @@ export const projects = [
     date: "2026",
     status: "Live Production",
     liveUrl: "https://flash-gen-ai-six.vercel.app",
-    githubUrl: "https://github.com/eyuashu06",
+    githubUrl: "https://github.com/eyuashu06/FlashGEN_AI",
     description: "Full-stack AI flashcard application leveraging Google Gemini API to generate smart study flashcards automatically, powered by Firebase Firestore for real-time storage and security rules.",
     highlights: [
       "Built with React 19 + TypeScript, Vite, and Tailwind CSS on frontend with Express.js server backend.",
@@ -96,7 +96,7 @@ export const projects = [
     date: "2026",
     status: "Live Production",
     liveUrl: "https://wedding-invitation-digital-ticket-m-pi.vercel.app",
-    githubUrl: "https://github.com/eyuashu06",
+    githubUrl: "https://github.com/eyuashu06/Wedding-Invitation-Digital-Ticket-Management",
     description: "Digital wedding invitation platform enabling real-time RSVP management, QR-code ticketing, guest attendance analytics, and custom invitation exporting.",
     highlights: [
       "Developed with React 18, TypeScript, Vite, and Tailwind CSS integrated with Supabase (PostgreSQL, Auth, RLS).",
@@ -135,7 +135,7 @@ export const projects = [
     date: "2026 – Present",
     status: "Active Project",
     liveUrl: null,
-    githubUrl: "https://github.com/eyuashu06",
+    githubUrl: "https://github.com/eyuashu06/ASTU_Complaint_and_Issue_Tracking_Managment_System",
     description: "Centralized complaint management platform designed for ASTU university ecosystem with multi-role access and intelligent AI helpdesk guidance.",
     highlights: [
       "Built with React frontend and Node.js/Express backend paired with MongoDB Atlas.",
@@ -210,7 +210,7 @@ export const projects = [
     date: "2026 – Present",
     status: "In Development",
     liveUrl: null,
-    githubUrl: "https://github.com/eyuashu06",
+    githubUrl: "https://github.com/eyuashu06/Harmonize",
     description: "Web application analyzing uploaded audio files to detect musical scale, key signature, chord progressions, and track metadata.",
     highlights: [
       "Designing React frontend dashboard with Node.js analysis engine.",
@@ -228,7 +228,7 @@ export const projects = [
     date: "May 2026",
     status: "Completed",
     liveUrl: null,
-    githubUrl: "https://github.com/eyuashu06",
+    githubUrl: "https://github.com/eyuashu06/StudentRegistration",
     description: "Full student registration platform managing academic records, course enrollments, and student demographics.",
     highlights: [
       "Built with JavaScript, Node.js, and MySQL with robust normalized schema design.",

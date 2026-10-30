@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Mail, Send, Sparkles, Code, Terminal, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail, Send, Sparkles, Code, Terminal, CheckCircle2, Copy, Check } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
@@ -15,6 +15,13 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -107,18 +114,37 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="pt-4 flex items-center gap-4 text-gray-400">
+            {/* Social Links & Quick Copy Email */}
+            <div className="pt-4 flex flex-wrap items-center gap-3 text-gray-400">
               <span className="text-xs font-mono tracking-wider uppercase text-gray-500">Connect:</span>
-              <a href={personalInfo.github} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+              <a href={personalInfo.github} target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href={`mailto:${personalInfo.email}`} className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
+              <a href={`mailto:${personalInfo.email}`} aria-label="Direct Email" className="p-2 rounded-lg bg-white/5 hover:bg-brand-500/20 hover:text-brand-400 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
+
+              {/* 1-Click Copy Email Button */}
+              <button
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-brand-500/20 border border-white/10 hover:border-brand-500/40 text-xs font-mono text-gray-300 hover:text-white transition-all"
+                title="Click to copy email address"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-emerald-400 font-semibold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-brand-400" />
+                    <span>Copy Email</span>
+                  </>
+                )}
+              </button>
             </div>
           </motion.div>
 

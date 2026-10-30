@@ -80,3 +80,24 @@
   mask-composite: exclude;
   pointer-events: none;
 }
+
+/* Infinite Tech Stack Marquee with Instant Pause-on-Hover */
+@keyframes marquee-glide {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-glide {
+  display: flex;
+  width: max-content;
+  animation: marquee-glide 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-glide:hover {
+  animation-play-state: paused;
+}
