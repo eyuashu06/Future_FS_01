@@ -224,16 +224,16 @@ const technologies = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section id="skills" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Core Technologies</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
             Engineering & Tooling Stack
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-600 to-brand-400 mx-auto mt-4 rounded-full" />
@@ -242,26 +242,26 @@ export default function Skills() {
       </div>
 
       {/* Full-width Infinite Horizontal Slideshow Marquee (Single Moving Track) */}
-      <div className="relative w-full overflow-hidden py-4">
+      <div className="relative w-full overflow-hidden py-3 sm:py-4">
         
         {/* Edge Fade Gradients for Seamless Depth */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 md:w-36 bg-gradient-to-r from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 md:w-36 bg-gradient-to-l from-[#090a0f] via-[#090a0f]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Single Slideshow Row Moving Smoothly with Pause on Hover */}
         <div className="flex overflow-hidden">
-          <div className="animate-marquee-glide flex gap-5 sm:gap-7 py-2">
+          <div className="animate-marquee-glide flex gap-3.5 sm:gap-6 md:gap-7 py-2">
             {[...technologies, ...technologies].map((tech, idx) => (
               <div
                 key={`${tech.name}-${idx}`}
-                className="group relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#12141d]/90 border border-brand-500/20 hover:border-brand-500/60 hover:bg-brand-500/10 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-brand-500/20 cursor-pointer"
+                className="group relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl sm:rounded-2xl bg-[#12141d]/90 border border-brand-500/20 hover:border-brand-500/60 hover:bg-brand-500/10 flex items-center justify-center transition-all duration-300 hover:scale-105 sm:hover:scale-110 shadow-lg hover:shadow-brand-500/20 cursor-pointer"
               >
-                <div className="transition-transform duration-300 group-hover:scale-110">
+                <div className="transition-transform duration-300 group-hover:scale-105 sm:group-hover:scale-110">
                   {tech.svg}
                 </div>
 
                 {/* Subtle Hover Tooltip */}
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-[#090a0f] border border-brand-500/30 text-[11px] font-semibold text-white whitespace-nowrap shadow-xl z-30">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[#090a0f] border border-brand-500/30 text-[10px] sm:text-[11px] font-semibold text-white whitespace-nowrap shadow-xl z-30">
                   {tech.name}
                 </span>
               </div>

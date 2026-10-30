@@ -53,13 +53,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 p-0.5 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <a
+            href="#home"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2.5 group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 p-0.5 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
               <div className="w-full h-full bg-[#090a0f] rounded-[10px] flex items-center justify-center">
                 <Code2 className="w-5 h-5 text-brand-500" />
               </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col text-left">
               <span className="text-lg font-bold text-white tracking-wide group-hover:text-brand-400 transition-colors">
                 Eyuel<span className="text-brand-500">.</span>
               </span>
@@ -104,35 +108,47 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-[#12141d] border border-white/10 text-gray-300 hover:text-white"
+            className="lg:hidden p-2.5 rounded-xl bg-[#12141d] border border-white/10 text-gray-300 hover:text-white active:scale-95 transition-all"
             aria-label="Toggle Navigation"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-brand-400" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#090a0f]/95 backdrop-blur-xl border-b border-brand-500/20 px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-200">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-200 hover:text-brand-400 hover:bg-brand-500/10 transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
+        <div className="lg:hidden bg-[#090a0f]/98 backdrop-blur-2xl border-b border-brand-500/20 px-4 pt-3 pb-6 max-h-[calc(100vh-4.5rem)] overflow-y-auto space-y-1.5 shadow-2xl">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.substring(1);
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-colors ${
+                  isActive
+                    ? 'bg-brand-500/15 text-brand-400 font-semibold border-l-4 border-brand-500'
+                    : 'text-gray-200 hover:text-white hover:bg-white/5 font-medium'
+                }`}
+              >
+                <span>{link.name}</span>
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse" />
+                )}
+              </a>
+            );
+          })}
           <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
             <a
               href={personalInfo.resumePdf}
               download
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-brand-600 text-white"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-600 to-brand-500 text-white shadow-lg shadow-brand-500/30 active:scale-98 transition-all"
             >
               <Download className="w-4 h-4" />
-              <span>Download CV</span>
+              <span>Download Resume (PDF)</span>
             </a>
           </div>
         </div>
