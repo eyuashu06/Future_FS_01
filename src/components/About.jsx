@@ -37,7 +37,7 @@ export default function About() {
               </h3>
               
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                I am <strong className="text-white font-semibold">Eyuel Ashenafi</strong>, a passionate Software Engineering student at <strong className="text-brand-400 font-semibold">Adama Science and Technology University (ASTU)</strong> and Software Engineering Intern at <strong className="text-brand-400 font-semibold">Omishtu Software Company</strong>.
+                I am <strong className="text-white font-semibold">Eyuel Ashenafi</strong>, a passionate Software Engineering student at <strong className="text-brand-400 font-semibold">Adama Science and Technology University (ASTU)</strong> with real-world experience as a Software Engineering Intern at <strong className="text-brand-400 font-semibold">Omishtu Software Company</strong>, where I contributed to building the Property and Rent Management System for Metebaber Building.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
@@ -77,9 +77,9 @@ export default function About() {
               <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
                 <Building2 className="w-6 h-6" />
               </div>
-              <h4 className="text-lg font-bold text-white">Omishtu Intern</h4>
+              <h4 className="text-lg font-bold text-white">Omishtu Software Intern</h4>
               <p className="text-xs text-gray-400 leading-relaxed">
-                Developing full-stack features, Laravel REST APIs, and React/Vue interfaces in active team sprints.
+                Jul 14 – Sep 23, 2026: Contributed to building the Property & Rent Management System website for Metebaber Building.
               </p>
             </div>
 

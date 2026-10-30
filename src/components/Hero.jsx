@@ -76,7 +76,7 @@ export default function Hero() {
 
             {/* Paragraph */}
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Software Engineering Student at <strong className="text-white">ASTU</strong> & Intern at <strong className="text-white">Omishtu Software Company</strong>. I build scalable, high-performance web applications with Next.js, React, Vue, Django, Node.js, Express, Laravel, and SQL/NoSQL databases.
+              Software Engineering Student at <strong className="text-white">ASTU</strong> & Full-Stack Developer with industry experience at <strong className="text-white">Omishtu Software Company</strong> (built the Metebaber Building Property & Rent Management System). I build scalable, high-performance web applications with Next.js, React, Vue, Django, Node.js, Express, Laravel, and SQL/NoSQL databases.
             </p>
 
             {/* Action Buttons */}
@@ -153,7 +153,7 @@ export default function Hero() {
                     <p className="text-purple-400">const <span className="text-yellow-300">developer</span> = &#123;</p>
                     <p className="pl-4 text-gray-300">name: <span className="text-green-400">"{personalInfo.name}"</span>,</p>
                     <p className="pl-4 text-gray-300">university: <span className="text-green-400">"ASTU Software Eng"</span>,</p>
-                    <p className="pl-4 text-gray-300">internship: <span className="text-green-400">"Omishtu Software"</span>,</p>
+                    <p className="pl-4 text-gray-300">internship: <span className="text-green-400">"Omishtu (Metebaber Project)"</span>,</p>
                     <p className="pl-4 text-gray-300">stack: [<span className="text-orange-400">"Next.js"</span>, <span className="text-orange-400">"React"</span>, <span className="text-orange-400">"Django"</span>, <span className="text-orange-400">"Node"</span>],</p>
                     <p className="pl-4 text-gray-300">architecture: <span className="text-blue-400">"Clean & Scalable"</span>,</p>
                     <p className="pl-4 text-gray-300">availableForHire: <span className="text-brand-400">true</span></p>

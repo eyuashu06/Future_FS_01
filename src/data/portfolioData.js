@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Eyuel Ashenafi",
   title: "Full-Stack Developer",
-  subTitle: "Software Engineering Student & Omishtu Intern",
+  subTitle: "Software Engineering Student & Full-Stack Developer",
   university: "Adama Science and Technology University (ASTU)",
   location: "Adama / Addis Ababa, Ethiopia",
   email: "eashenafi82@gmail.com",
@@ -17,7 +17,7 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { label: "Completed Projects", value: 9, suffix: "+" },
+  { label: "Completed Projects", value: 10, suffix: "+" },
   { label: "Live Vercel Apps", value: 3, suffix: "+" },
   { label: "Tech Stack Tools", value: 18, suffix: "+" },
   { label: "Engineering Years", value: 3, suffix: "+" }
@@ -27,15 +27,15 @@ export const workExperience = [
   {
     role: "Software Engineering Intern",
     company: "Omishtu Software Company",
-    period: "2026 – Present",
-    type: "Internship",
-    description: "Developing production-grade full-stack web applications and API services within professional Git workflows.",
+    period: "July 14, 2026 – September 23, 2026",
+    type: "Internship (Completed)",
+    description: "Participated in designing and building the Property and Rent Management System website for Metebaber Building, developing full-stack features, database schemas, and RESTful APIs.",
     highlights: [
-      "Building full-stack features end to end: Laravel backend microservices and RESTful APIs paired with Vue.js & React.js frontends.",
-      "Comprehensive API testing, validation, and documentation using Postman and Thunder Client.",
-      "Collaborating actively using Git branch management, pull requests, code reviews, and Agile team standards."
+      "Contributed to building the end-to-end Property and Rent Management System web platform for Metebaber Building.",
+      "Engineered full-stack features, RESTful endpoints, and database models to streamline property tracking, tenant records, and lease management.",
+      "Collaborated in sprint cycles, code reviews, API testing with Postman, and team Git branch workflows."
     ],
-    tech: ["Laravel", "React.js", "Vue.js", "REST APIs", "Postman", "Git"]
+    tech: ["Laravel", "Vue.js", "React.js", "MySQL", "REST APIs", "Git", "Postman"]
   }
 ];
 
@@ -106,6 +106,26 @@ export const projects = [
     tech: ["React 18", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "Recharts", "Vercel"],
     featured: true,
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "metebaber-property-rent",
+    title: "Metebaber Property & Rent Management",
+    subtitle: "Commercial Building Lease & Unit Management System",
+    category: "Full-Stack",
+    date: "Jul 14 – Sep 23, 2026",
+    status: "Completed (Omishtu Software Internship)",
+    liveUrl: null,
+    githubUrl: "https://github.com/eyuashu06",
+    description: "Enterprise full-stack property and rent management platform built for Metebaber Building during internship at Omishtu Software Company to manage commercial units, tenant contracts, automated lease tracking, and maintenance operations.",
+    highlights: [
+      "Participated in building the Property and Rent Management System website for Metebaber Building from backend architecture to frontend views.",
+      "Engineered Laravel RESTful APIs and MySQL schemas to manage commercial units, tenant lease terms, and recurring payment tracking.",
+      "Built clean, responsive administrative dashboards with Vue.js & React to streamline contract records and occupancy status.",
+      "Performed rigorous API endpoint testing and validation using Postman within team Git branch workflows."
+    ],
+    tech: ["Laravel", "Vue.js", "React.js", "MySQL", "REST APIs", "Postman", "Git"],
+    featured: true,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "astu-complaint",

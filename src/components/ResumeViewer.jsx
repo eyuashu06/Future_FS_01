@@ -46,12 +46,12 @@ export default function ResumeViewer() {
             <div className="p-5 rounded-2xl bg-[#090a0f] border border-white/10 space-y-3">
               <div className="flex items-center gap-2 text-brand-400 font-bold text-sm">
                 <Briefcase className="w-4 h-4" />
-                <span>Current Internship</span>
+                <span>Internship Experience</span>
               </div>
               <h4 className="text-base font-bold text-white">Software Engineering Intern</h4>
-              <p className="text-xs text-brand-300">Omishtu Software Company (2026 – Present)</p>
+              <p className="text-xs text-brand-300">Omishtu Software Company (July 14 – September 23, 2026)</p>
               <p className="text-xs text-gray-300 leading-relaxed">
-                Developing Laravel backends, RESTful APIs, Vue.js/React.js frontends, API testing, and Git pull requests.
+                Participated in building the Property and Rent Management System website for Metebaber Building, developing full-stack features, RESTful APIs, and database schemas.
               </p>
             </div>
 
